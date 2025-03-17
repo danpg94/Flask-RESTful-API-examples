@@ -76,9 +76,10 @@ class Video(Resource):
         if args['name']:
             result.name = args["name"]
         if args['views']:
-            result.name = args["views"]
+            result.views = args["views"]
         if args['likes']:
-            result.name = args["likes"]
+            result.likes = args["likes"]
+        db.session.commit()
         return result, 201
 
     def delete(self, video_id):
